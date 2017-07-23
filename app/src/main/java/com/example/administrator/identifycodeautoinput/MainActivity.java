@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // 动态获取权限
         handlePermission();
-
+        // 给按钮添加点击监听事件
         findViewById(R.id.get_code_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,11 +37,15 @@ public class MainActivity extends AppCompatActivity {
                 AuthCode.getInstance().with(MainActivity.this).config(config).into((EditText) findViewById(R.id.code_et));
             }
         });
-
     }
 
     /**
-     * 简单处理了短信权限
+     * @decs: 动态获取权限
+     * @author: 郑少鹏
+     * @date: 2017/7/23 10:03
+     * @param:
+     * @return:
+     * @version: v 1.0
      */
     private void handlePermission() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_SMS)
