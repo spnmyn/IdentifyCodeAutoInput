@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
                 CodeConfig config = new CodeConfig.Builder()
                         .codeLength(4) // 设置验证码长度
                         .smsFromStart(133) // 设置验证码发送号码前几位数字
-                        //.smsFrom(1690123456789) // 如果验证码发送号码固定，则可以设置验证码发送完整号码
+                        //.smsFrom(1690123456789) // 如果验证码发送号码固定，可以设置验证码发送完整号码
                         .smsBodyStartWith("百度科技") // 设置验证码短信开头文字
                         .smsBodyContains("验证码") // 设置验证码短信内容包含文字
                         .build();
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == REQUEST_PERMISSION_CODE) {
             if (grantResults.length != 0) {
                 if (grantResults[0] != PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(this, "您阻止了app读取您的短信，您可以自己手动输入验证码", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "您阻止了App读取您的短信，可以自己手动输入验证码", Toast.LENGTH_SHORT).show();
                 }
             }
         }
